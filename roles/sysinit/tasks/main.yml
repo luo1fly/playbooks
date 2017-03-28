@@ -1,0 +1,7 @@
+---
+# tasks file for sysinit
+- include: ChangeSysTimeZone.yml
+- include: InstallBasePkges.yml
+- include: SetLimits.yml
+- include: AllowSu.yml
+- include: SetCore.yml

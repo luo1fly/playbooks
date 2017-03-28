@@ -1,0 +1,7 @@
+---
+# vars file for rabbitmq
+Rabbit:
+  name: rabbitmq
+  version: 3.6.6
+  
+

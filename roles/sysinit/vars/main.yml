@@ -1,0 +1,27 @@
+---
+# vars file for sysinit
+TimeZone: /usr/share/zoneinfo/Asia/Shanghai
+SysTZFile: /etc/localtime
+SyncTimeJob: /usr/sbin/ntpdate pool.ntp.org
+BaseRpm:
+  - patch
+  - make
+  - cmake
+  - gcc-c++
+  - bzip2-devel
+  - curl-devel 
+  - vim-minimal 
+  - zip
+  - unzip
+  - wget
+  - openssl-devel
+  - telnet
+  - lrzsz
+
+LimitsFile: /etc/security/limits.conf
+CountLimits: grep "soft nproc 65535" {{LimitsFile}}
+
+SuConf: /etc/pam.d/su
+
+SysctlFile: /etc/sysctl.conf
+CountSysctl: grep net.netfilter.nf_conntrack_max {{SysctlFile}}

@@ -1,0 +1,6 @@
+- name: 同步配置文件到远程主机
+  template: src={{Redis.cfgfile}} dest={{Dir.conf}}/{{item}}.conf
+  with_items: "{{Instance}}"
+- name: 同步启动脚本到远程主机
+  template: src={{Redis.initfile}} dest={{Dir.init}}/{{Redis.name}}_{{item}} mode=755 owner=root group=root
+  with_items: "{{Instance}}"
