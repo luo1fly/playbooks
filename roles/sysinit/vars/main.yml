@@ -1,5 +1,7 @@
 ---
 # vars file for sysinit
+Downloads: /opt/software
+InitIptables: init_iptables.sh
 TimeZone: /usr/share/zoneinfo/Asia/Shanghai
 SysTZFile: /etc/localtime
 SyncTimeJob: /usr/sbin/ntpdate pool.ntp.org
