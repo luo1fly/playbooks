@@ -1,5 +1,5 @@
 ---
-- hosts: dev02
+- hosts: commodity[7]
   remote_user: luoyifei
   sudo: yes
   roles:
