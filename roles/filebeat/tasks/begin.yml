@@ -1,8 +1,2 @@
 - name: make sure target file path exsit
   file: path={{package_tmp_path}} state=directory mode=0755
-#- name: create a log file
-#  file: path={{input_logs[0]}} state=touch mode=0666
-#- name: set environment vars to target system
-#  template: src=bashrc.j2 dest=/etc/bashrc mode=0644
-#  notify:
-#    - source bashrc

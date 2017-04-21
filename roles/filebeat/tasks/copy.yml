@@ -1,2 +1,2 @@
 - name: Copy rpm packages to target server directory
-  copy: src=filebeat-5.0.1-x86_64.rpm dest=/tmp/software owner=root group=root mode=755
+  copy: src={{filebeat_rpm}} dest=/tmp/software

@@ -19,22 +19,20 @@ filebeat.prospectors:
   paths:
     - /var/log/messages
   document_type: messages
+  tail_files: true
 
 - input_type: log
   paths:
     - /var/log/secure
   document_type: secure
+  tail_files: true
 
 - input_type: log
   paths:
     - /var/log/cron
   document_type: cron
   exclude_lines: ["run-parts","anacron"]
-
-- input_type: log
-  paths:
-    - /var/log/operate.log
-  document_type: operate
+  tail_files: true
 
   # Include lines. A list of regular expressions to match. It exports the lines that are
   # matching any regular expression from the list.
@@ -87,12 +85,7 @@ filebeat.prospectors:
 # Configure what outputs to use when sending the data collected by the beat.
 # Multiple outputs may be used.
 #------------------------------- Redis output ---------------------------------
-output.redis:
-  hosts: ["{{ redis_hosts }}"]
-  port: {{ redis_port }}
-  key: "{{ redis_key }}"
-  db: {{ redis_db }}
-  timeout: 5
+#
 #-------------------------- Elasticsearch output ------------------------------
 #output.elasticsearch:
   # Array of hosts to connect to.
@@ -117,6 +110,8 @@ output.redis:
 
   # Client Certificate Key
   #ssl.key: "/etc/pki/client/cert.key"
+output.logstash:
+  hosts: ["log-collect01.shein.com:5044"]
 
 #================================ Logging =====================================
 
