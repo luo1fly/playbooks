@@ -8,8 +8,13 @@
 - name: 将东八区时区文件链接到系统文件
   file: src={{TimeZone}} dest={{SysTZFile}} state=link
   when: timezone|failed
+- name: 查看是否已安装ntp
+  shell: rpm -qa|egrep "\bntp\b"
+  register: ntp_installed
+  ignore_errors: yes
 - name: 停止ntpd服务
   service: name=ntpd state=stopped enabled=no
+  when: ntp_installed|success
 - name: 安装ntpdate工具
   yum: name=ntpdate state=present
 - name: 从外部时间服务器同步时间
