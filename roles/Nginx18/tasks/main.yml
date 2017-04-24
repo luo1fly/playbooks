@@ -1,5 +1,5 @@
 ---
-# tasks file for Nginx14
+# tasks file for Nginx18
 - name: 查看是否已经安装过nginx
   shell: ls {{Nginx.prefix}}
   register: nginxInstalled
