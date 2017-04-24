@@ -8,11 +8,11 @@
     - "{{Modules.geoip}}"
     - "{{Modules.lua}}"
 
-- name: 给nginx安装补丁
-  patch: >
-    basedir={{Downloads}}/{{Nginx.name}}-{{Nginx.version}}
-    src={{Downloads}}/{{Modules.check.name}}-{{Modules.check.version}}/{{Modules.check.patch_name}}
-    strip=1
+#- name: 给nginx安装补丁
+#  patch: >
+#    basedir={{Downloads}}/{{Nginx.name}}-{{Nginx.version}}
+#    src={{Downloads}}/{{Modules.check.name}}-{{Modules.check.version}}/{{Modules.check.patch_name}}
+#    strip=1
 
 - name: 添加nginx管理用户
   user: name={{Nginx.user.name}} home={{Nginx.user.home}} shell={{Nginx.user.shell}}
