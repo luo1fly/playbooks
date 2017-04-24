@@ -16,12 +16,12 @@
 
 - name: 拷贝pcre到远程主机
   synchronize: src={{Modules.pcre.name}}-{{Modules.pcre.version}} dest={{Downloads}} recursive=yes delete=yes
-- name: 配置pcre
-  shell: chdir={{Downloads}}/{{Modules.pcre.name}}-{{Modules.pcre.version}} ./configure
-- name: 编译pcre
-  shell: chdir={{Downloads}}/{{Modules.pcre.name}}-{{Modules.pcre.version}} make -j 4
-- name: 安装pcre
-  shell: chdir={{Downloads}}/{{Modules.pcre.name}}-{{Modules.pcre.version}} make install
+#- name: 配置pcre
+#  shell: chdir={{Downloads}}/{{Modules.pcre.name}}-{{Modules.pcre.version}} ./configure
+#- name: 编译pcre
+#  shell: chdir={{Downloads}}/{{Modules.pcre.name}}-{{Modules.pcre.version}} make -j 4
+#- name: 安装pcre
+#  shell: chdir={{Downloads}}/{{Modules.pcre.name}}-{{Modules.pcre.version}} make install
 
 - name: 拷贝Lua到远程主机
   synchronize: src={{Modules.Lua.name}}-{{Modules.Lua.version}} dest={{Downloads}} recursive=yes delete=yes
