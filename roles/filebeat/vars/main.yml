@@ -1,7 +1,7 @@
 ---
 # vars for rpm transport
 #Pubic_IP: 58.213.139.100
-package_tmp_path: /tmp/software
+package_tmp_path: /opt/software
 filebeat_rpm: filebeat-5.3.0-x86_64.rpm
 filebeat_config_file: /etc/filebeat/filebeat.yml
 # vars for filebeat config file
