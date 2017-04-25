@@ -19,6 +19,8 @@
   yum: name=ntpdate state=present
 - name: 从外部时间服务器同步时间
   shell: "{{SyncTimeJob}}"
+- name: 重启日志服务
+  service: name=rsyslog state=restarted
 - name: 添加定时任务同步时间
   cron: name="Sync Time" minute="59" hour="23" job="{{SyncTimeJob}}"
 - name: 重启crond服务
